@@ -71,7 +71,7 @@ class TestGoogleSpeech(unittest.TestCase):
       text_file.seek(0)
       original_stdin, sys.stdin = sys.stdin, text_file
       speech = google_speech.Speech("-", "fr")
-      for i, (segment, ref_text) in enumerate(zip(speech, itertools.cycle(split_text)), 1):
+      for i, (segment, ref_text) in enumerate(list(zip(speech, itertools.cycle(split_text))), 1):
         self.assertEqual(segment.text, ref_text)
       self.assertEqual(i, len(split_text * 3))
       sys.stdin = original_stdin

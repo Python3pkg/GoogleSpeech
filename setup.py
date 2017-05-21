@@ -8,7 +8,7 @@ from setuptools import find_packages, setup
 
 
 if sys.hexversion < 0x3030000:
-  print("Python version %s is unsupported, >= 3.3.0 is needed" % (".".join(map(str, sys.version_info[:3]))))
+  print(("Python version %s is unsupported, >= 3.3.0 is needed" % (".".join(map(str, sys.version_info[:3])))))
   exit(1)
 
 with open(os.path.join("google_speech", "__init__.py"), "rt") as f:
